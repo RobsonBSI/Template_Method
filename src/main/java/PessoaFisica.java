@@ -13,4 +13,9 @@ public class PessoaFisica extends Pessoa{
     public String documentacao() {
         return "CPF: " + this.cpf;
     }
+
+    @Override
+    public String getTipo() {
+        return "Pessoa Fisica";
+    }
 }

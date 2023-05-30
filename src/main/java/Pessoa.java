@@ -2,7 +2,7 @@ public abstract class Pessoa {
     private int id;
     protected String nome;
     private float valorCompra;
-    private int desconto;
+    private float desconto=1;
 
     public int getId() {
         return id;
@@ -28,25 +28,25 @@ public abstract class Pessoa {
         this.valorCompra = valorCompra;
     }
 
-    public int getDesconto() {
+
+    public float getDesconto() {
         return desconto;
     }
 
-    public void setDesconto(int desconto) {
+    public void setDesconto(float desconto) {
         this.desconto = desconto;
     }
 
     public float calcularDesconto(){
-        float v = this.valorCompra * (1 - (this.desconto / 100));
+
+        float v = this.valorCompra * this.desconto;
         return v;
     }
 
 
     public abstract String documentacao();
 
-    public String getTipo() {
-        return "Pessoa";
-    }
+    public abstract String getTipo();
 
     public String getInfo() {
         return getTipo() + "(" +
